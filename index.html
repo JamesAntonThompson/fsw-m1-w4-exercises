@@ -70,6 +70,53 @@
         </div>
     </div>
 
+    <div id="reservationModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="content">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Reserve a table</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div> <!-- end modal header -->
+                    <div class="modal-body">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-4">Number of guests</label>
+                            <label class="radio-inline"><input type="radio" name="optradio">1&emsp;&emsp;</label>
+                            <label class="radio-inline"><input type="radio" name="optradio">2&emsp;&emsp;</label>
+                            <label class="radio-inline"><input type="radio" name="optradio">3&emsp;&emsp;</label>
+                            <label class="radio-inline"><input type="radio" name="optradio">4&emsp;&emsp;</label>
+                            <label class="radio-inline"><input type="radio" name="optradio">5&emsp;&emsp;</label>
+                            <label class="radio-inline"><input type="radio" name="optradio">6&emsp;&emsp;</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-4">Section</label>
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-sm active bg-success text-white"><input type="checkbox" checked autocomplete="off"> Non-Smoking</label>
+                                <label class="btn btn-sm bg-danger text-white"><input type="checkbox" autocomplete="off"> Smoking</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-4">Date and time</label>
+                            <div class="input-group col-12 col-sm-4">
+                                <div class="input-group-addon fa fa-calendar"></div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Date">
+                            </div>
+                            <div class="input-group col-12 col-sm-4">
+                                <div class="input-group-addon fa fa-clock-o"></div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Time">
+                            </div>
+                        </div>
+                    </div> <!-- end modal body -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-default bg-primary text-white" type="submit">Reserve</button>
+                    </div> <!-- end modal footer -->
+                </form>
+            </div> <!-- end modal content -->
+        </div> <!-- end modal-dialog -->
+    </div> <!-- end modal -->
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -81,9 +128,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <!-- <a class="btn btn-sm btn-block btn-warning" href="#resform">Reserve Table</a> -->
-                    <a type="button" class="btn btn-warning btn-sm btn-block" data-toggle="tooltip" data-html="true" title="Or Call us at <br><strong>+852 12345678</strong>" data-placement="bottom"
-                    href="#reserveform">Reserve a table</a>
+                    <a type="button" class="btn btn-warning btn-sm btn-block" data-toggle="modal" data-target="#reservationModal">Reserve a table</a>
                 </div>
             </div>
         </div> <!-- end container -->
@@ -139,24 +184,14 @@
                         <form id="resform">
                             <div class="form-group row">
                                 <label class="col-12 col-sm-2">Number of guests</label>
-                                <label class="radio-inline col">
-                                    <input type="radio" name="optradio">1
-                                </label>
-                                <label class="radio-inline col">
-                                    <input type="radio" name="optradio">2
-                                </label>
-                                <label class="radio-inline col">
-                                    <input type="radio" name="optradio">3
-                                </label>
-                                <label class="radio-inline col">
-                                    <input type="radio" name="optradio">4
-                                </label>
-                                <label class="radio-inline col">
-                                    <input type="radio" name="optradio">5
-                                </label>
-                                <label class="radio-inline col">
-                                    <input type="radio" name="optradio">6
-                                </label>
+                                <div class="col">
+                                <label class="radio-inline"><input type="radio" name="optradio">1&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <label class="radio-inline"><input type="radio" name="optradio">2</label>
+                                <label class="radio-inline"><input type="radio" name="optradio">3</label>
+                                <label class="radio-inline"><input type="radio" name="optradio">4</label>
+                                <label class="radio-inline"><input type="radio" name="optradio">5</label>
+                                <label class="radio-inline"><input type="radio" name="optradio">6</label>
+                                </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-12 col-sm-2">Date and time</label>
@@ -225,12 +260,6 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/tether/dist/js/tether.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <script>
-        $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-         });
-    </script>
 </body>
 
 </html>
