@@ -3,3 +3,4 @@ npm install bootstrap@4.0.0-alpha.6 --save
 npm install font-awesome --save
 npm install -g less
 npm install --save-dev node-sass
+npm install --save-dev onchange parallelshell
